@@ -7,10 +7,8 @@ export const router = express.Router();
 
 router.get("/", (req, res) => {
   conn.query("select * from Movie", (err, result, fields) => {
-    const prettyResult = JSON.stringify(result);
-
-    // ส่งข้อมูลที่จัดรูปแบบแล้วกลับไปยัง client
-    res.json(prettyResult);  });
+    res.json(result);
+  });
 });
 
 //insert
